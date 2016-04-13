@@ -56,9 +56,11 @@
     <Compile Include="..\Shared\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="MsBuildNamespaceResolverTest.cs" />
     <Compile Include="Projects\FolderTest.cs" />
     <Compile Include="Projects\ImportTest.cs" />
     <Compile Include="Projects\ProjectFileNodeCollectionTest.cs" />
+    <Compile Include="Projects\ProjectFileNodeTest.cs" />
     <Compile Include="Projects\ProjectTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectFiles.Designer.cs">

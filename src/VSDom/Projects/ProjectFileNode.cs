@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace VSDom.Projects
 {
@@ -157,6 +158,36 @@ namespace VSDom.Projects
 		}
 
 		#endregion
+
+		/// <summary>Selects a node given an XPath expression.</summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="expression">
+		/// The XPath expression.
+		/// </param>
+		/// <remarks>
+		/// Due to an issue with namespaces with an empty prefix, all references to
+		/// nodes should have an x-prefix.
+		/// </remarks>
+		public T SelectNode<T>(string expression) where T : ProjectFileNode
+		{
+			var node = Element.XPathSelectElement(expression, MsBuild.Resolver);
+			return (T)Select(node);
+		}
+
+		/// <summary>Selects nodes given an XPath expression.</summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="expression">
+		/// The XPath expression.
+		/// </param>
+		/// <remarks>
+		/// Due to an issue with namespaces with an empty prefix, all references to
+		/// nodes should have an x-prefix.
+		/// </remarks>
+		public IEnumerable<T> SelectNodes<T>(string expression) where T : ProjectFileNode
+		{
+			var nodes = Element.XPathSelectElements(expression, MsBuild.Resolver);
+			return nodes.Select(node => Select(node)).Cast<T>();
+		}
 
 		/// <summary>Internal select factory to allow typed navigation to children.</summary>
 		[SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity",

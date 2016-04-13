@@ -58,6 +58,7 @@
     <Compile Include="Diagnostics\CollectionDebugView.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="MsBuild.cs" />
+    <Compile Include="MsBuildNamespaceResolver.cs" />
     <Compile Include="Projects\BootstrapperPackage.cs" />
     <Compile Include="Projects\Compile.cs" />
     <Compile Include="Projects\EmbeddedResource.cs" />
