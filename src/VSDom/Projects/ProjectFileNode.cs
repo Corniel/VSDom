@@ -39,15 +39,25 @@ namespace VSDom.Projects
 		/// <summary>Gets the local name of the <see cref="ProjectFileNode"/>.</summary>
 		public abstract string LocalName { get; }
 
-		/// <summary>Gets the child nodes.</summary>
+		/// <summary>Gets all child nodes.</summary>
 		[SuppressMessage("Microsoft.Naming", "CA1721:PropertyNamesShouldNotMatchGetMethods",
-			Justification = "This is the best way to allow easy out of the box casting on children.")]
-		public IEnumerable<ProjectFileNode> Children { get { return Element.Elements().Select(elm => Select(elm)); } }
+			Justification = "It is what it is.")]
+		public ProjectFileNodeCollection<ProjectFileNode> Children { get { return GetChildren<ProjectFileNode>(); } }
 
 		/// <summary>Gets the a <see cref="ProjectFileNodeCollection{T}"/> of children.</summary>
 		public ProjectFileNodeCollection<T> GetChildren<T>() where T : ProjectFileNode
 		{
 			return new ProjectFileNodeCollection<T>(this);
+		}
+
+		/// <summary>Get all children.</summary>
+		/// <remarks>
+		/// This function exists as source for the <see cref="ProjectFileNodeCollection{T}"/>.
+		/// With this construction, we can expose all children as collection.
+		/// </remarks>
+		internal IEnumerable<ProjectFileNode> GetAllChildren()
+		{
+			return Element.Elements().Select(elm => Create(elm));
 		}
 
 		/// <summary>Adds a child to the node.</summary>
@@ -171,7 +181,7 @@ namespace VSDom.Projects
 		public T SelectNode<T>(string expression) where T : ProjectFileNode
 		{
 			var node = Element.XPathSelectElement(expression, MsBuild.Resolver);
-			return (T)Select(node);
+			return (T)Create(node);
 		}
 
 		/// <summary>Selects nodes given an XPath expression.</summary>
@@ -186,13 +196,13 @@ namespace VSDom.Projects
 		public IEnumerable<T> SelectNodes<T>(string expression) where T : ProjectFileNode
 		{
 			var nodes = Element.XPathSelectElements(expression, MsBuild.Resolver);
-			return nodes.Select(node => Select(node)).Cast<T>();
+			return nodes.Select(node => Create(node)).Cast<T>();
 		}
 
-		/// <summary>Internal select factory to allow typed navigation to children.</summary>
+		/// <summary>Internal factory to allow typed navigation to children.</summary>
 		[SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity",
 			Justification = "It is what it is.")]
-		internal static ProjectFileNode Select(XElement element)
+		internal static ProjectFileNode Create(XElement element)
 		{
 			if (element == null || element.Name.Namespace != MsBuild.NS) { return null; }
 

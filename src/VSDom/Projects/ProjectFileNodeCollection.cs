@@ -72,7 +72,7 @@ namespace VSDom.Projects
 
 		/// <summary>Helper property to select the needed children.</summary>
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		private IEnumerable<T> Items { get { return Parent.Children.Where(child => child is T).Cast<T>(); } }
+		private IEnumerable<T> Items { get { return Parent.GetAllChildren().Where(child => child is T).Cast<T>(); } }
 		
 		#endregion
 	}
