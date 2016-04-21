@@ -76,6 +76,7 @@
     <Compile Include="Projects\Reference.cs" />
     <Compile Include="Projects\UnknownNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTesting\AssertionException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Test\" />
