@@ -13,12 +13,5 @@ namespace VSDom.Projects
 
 		/// <summary>Gets the local name of the <see cref="None"/>.</summary>
 		public override string LocalName { get { return "None"; } }
-
-		/// <summary>Gets and set a link.</summary>
-		public string Link
-		{
-			get { return Get("Link"); }
-			set { Set("Link", value); }
-		}
 	}
 }

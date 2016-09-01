@@ -14,13 +14,6 @@ namespace VSDom.Projects
 		/// <summary>Gets the local name of the <see cref="Reference"/>.</summary>
 		public override string LocalName { get { return "Reference"; } }
 
-		/// <summary>Gets and set the include (the name of the reference).</summary>
-		public string Include
-		{
-			get { return Get("Include", true); }
-			set { Set("Include", value, true); }
-		}
-
 		/// <summary>Gets and set the name of the reference.</summary>
 		/// <remarks>
 		/// This element is obsolete.

@@ -39,6 +39,20 @@ namespace VSDom.Projects
 		/// <summary>Gets the local name of the <see cref="ProjectFileNode"/>.</summary>
 		public abstract string LocalName { get; }
 
+		/// <summary>Gets and set an include.</summary>
+		public string Include
+		{
+			get { return Get("Include", true); }
+			set { Set("Include", value, true); }
+		}
+
+		/// <summary>Gets and set a link.</summary>
+		public string Link
+		{
+			get { return Get("Link"); }
+			set { Set("Link", value); }
+		}
+
 		/// <summary>Gets all child nodes.</summary>
 		[SuppressMessage("Microsoft.Naming", "CA1721:PropertyNamesShouldNotMatchGetMethods",
 			Justification = "It is what it is.")]

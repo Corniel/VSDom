@@ -34,12 +34,5 @@ namespace VSDom.Projects
 			get { return Get("DependentUpon"); }
 			set { Set("DependentUpon", value); }
 		}
-
-		/// <summary>Gets and set a link.</summary>
-		public string Link
-		{
-			get { return Get("Link"); }
-			set { Set("Link", value); }
-		}
 	}
 }

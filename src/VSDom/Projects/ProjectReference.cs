@@ -21,14 +21,7 @@ namespace VSDom.Projects
 			get { return Get("Name"); }
 			set { Set("Name", value); }
 		}
-
-		/// <summary>Gets and set the include (the name of the reference).</summary>
-		public string Include
-		{
-			get { return Get("Include", true); }
-			set { Set("Include", value, true); }
-		}
-
+		
 		/// <summary>Gets and set the ID of the project.</summary>
 		public Guid Project
 		{

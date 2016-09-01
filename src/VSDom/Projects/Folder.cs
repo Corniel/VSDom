@@ -22,12 +22,5 @@ namespace VSDom.Projects
 
 		/// <summary>Gets the local name of the <see cref="Folder"/>.</summary>
 		public override string LocalName { get { return "Folder"; } }
-
-		/// <summary>Gets and set the include (the name of the folder).</summary>
-		public string Include
-		{
-			get { return Get("Include", true); }
-			set { Set("Include", value, true); }
-		}
 	}
 }
