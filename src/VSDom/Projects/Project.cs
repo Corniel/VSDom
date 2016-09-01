@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Xml.Linq;
 
 namespace VSDom.Projects
@@ -15,6 +14,12 @@ namespace VSDom.Projects
 		/// The corresponding <see cref="XElement"/>.
 		/// </param>
 		public Project(XElement element) : base(element) { }
+
+		/// <summary>The location of the File.</summary>
+		/// <remarks>
+		/// This property is set when loaded from file, and can be changed if wanted.
+		/// </remarks>
+		public FileInfo Location { get; set; }
 
 		/// <summary>Gets the local name of the <see cref="Project"/>.</summary>
 		public override string LocalName { get { return "Project"; } }
@@ -102,7 +107,9 @@ namespace VSDom.Projects
 			Guard.NotNull(file, "file");
 			using (var stream = file.OpenRead())
 			{
-				return Load(stream);
+				var project = Load(stream);
+				project.Location = file;
+				return project;
 			}
 		}
 		/// <summary>Loads a project from stream.</summary>
