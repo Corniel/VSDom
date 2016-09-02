@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSDom", "VSDom\VSDom.csproj", "{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSDom.UnitTests", "VSDom.UnitTests\VSDom.UnitTests.csproj", "{E564BD1C-FB02-49BC-B149-E6AE131384A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CDDA6EF-0839-4C2F-AB8D-07DA42C205D1}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+		..\ReleaseNotes.md = ..\ReleaseNotes.md
+		..\VSDom.license.txt = ..\VSDom.license.txt
+		VSDom.ruleset = VSDom.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EE041812-C0E4-4360-8875-DA083D72E8E8}"
+	ProjectSection(SolutionItems) = preProject
+		Shared\ProductInfo.cs = Shared\ProductInfo.cs
+		Shared\VersionInfo.cs = Shared\VersionInfo.cs
+		Shared\VSDom.snk = Shared\VSDom.snk
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E564BD1C-FB02-49BC-B149-E6AE131384A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E564BD1C-FB02-49BC-B149-E6AE131384A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E564BD1C-FB02-49BC-B149-E6AE131384A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E564BD1C-FB02-49BC-B149-E6AE131384A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE041812-C0E4-4360-8875-DA083D72E8E8} = {9CDDA6EF-0839-4C2F-AB8D-07DA42C205D1}
+	EndGlobalSection
+EndGlobal

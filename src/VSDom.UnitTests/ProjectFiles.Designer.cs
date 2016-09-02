@@ -65,13 +65,31 @@ namespace VSDom.UnitTests {
         ///&lt;Project ToolsVersion=&quot;14.0&quot; DefaultTargets=&quot;Build&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
         ///  &lt;Import Project=&quot;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&quot; Condition=&quot;Exists(&apos;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&apos;)&quot; /&gt;
         ///  &lt;PropertyGroup&gt;
-        ///    &lt;Configuration Condition=&quot; &apos;$(Configuration)&apos; == &apos;&apos; &quot;&gt;Debug&lt;/Configuration&gt;
-        ///    &lt;Platform Condition=&quot; &apos;$(Platform)&apos; == &apos;&apos; &quot;&gt;AnyCPU&lt;/Platform&gt;
-        ///    [rest of string was truncated]&quot;;.
+        ///	&lt;Configuration Condition=&quot; &apos;$(Configuration)&apos; == &apos;&apos; &quot;&gt;Debug&lt;/Configuration&gt;
+        ///	&lt;Platform Condition=&quot; &apos;$(Platform)&apos; == &apos;&apos; &quot;&gt;AnyCPU&lt;/Platform&gt;
+        ///	&lt;Project [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SimpleProject {
             get {
                 return ResourceManager.GetString("SimpleProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Microsoft Visual Studio Solution File, Format Version 12.00
+        ///# Visual Studio 14
+        ///VisualStudioVersion = 14.0.25123.0
+        ///MinimumVisualStudioVersion = 10.0.40219.1
+        ///Project(&quot;{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}&quot;) = &quot;VSDom&quot;, &quot;VSDom\VSDom.csproj&quot;, &quot;{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}&quot;
+        ///EndProject
+        ///Project(&quot;{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}&quot;) = &quot;VSDom.UnitTests&quot;, &quot;VSDom.UnitTests\VSDom.UnitTests.csproj&quot;, &quot;{E564BD1C-FB02-49BC-B149-E6AE131384A7}&quot;
+        ///EndProject
+        ///Project(&quot;{2150E333-8FDC-42A3-9474-1A3956D46DE8 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SimpleSolution {
+            get {
+                return ResourceManager.GetString("SimpleSolution", resourceCulture);
             }
         }
     }

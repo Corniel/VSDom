@@ -30,7 +30,25 @@ namespace VSDom
 			}
 			return param;
 		}
-		
+
+		/// <summary>Guards the parameter if not null or an empty string, otherwise throws an argument (null) exception.</summary>
+		/// <param name="param">
+		/// The parameter to guard.
+		/// </param>
+		/// <param name="paramName">
+		/// The name of the parameter.
+		/// </param>
+		[DebuggerStepThrough]
+		public static string NotNullOrEmpty([ValidatedNotNull]string param, string paramName)
+		{
+			NotNull(param, paramName);
+			if (string.Empty.Equals(param))
+			{
+				throw new ArgumentException("Value cannot be an empty string.", paramName);
+			}
+			return param;
+		}
+
 		/// <summary>Marks the NotNull argument as being validated for not being null,
 		/// to satisfy the static code analysis.
 		/// </summary>

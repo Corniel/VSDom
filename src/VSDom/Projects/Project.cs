@@ -15,7 +15,7 @@ namespace VSDom.Projects
 		/// </param>
 		public Project(XElement element) : base(element) { }
 
-		/// <summary>The location of the File.</summary>
+		/// <summary>The location of the project file.</summary>
 		/// <remarks>
 		/// This property is set when loaded from file, and can be changed if wanted.
 		/// </remarks>
