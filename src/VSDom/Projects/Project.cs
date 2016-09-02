@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Xml.Linq;
+using System.Linq;
 
 namespace VSDom.Projects
 {
@@ -44,6 +46,31 @@ namespace VSDom.Projects
 
 		/// <summary>Gets a collection of <see cref="ItemGroup"/>s.</summary>
 		public ProjectFileNodeCollection<ItemGroup> ItemGroups { get { return GetChildren<ItemGroup>(); } }
+
+		/// <summary>Get all files to compile of the project.</summary>
+		public IEnumerable<Compile> Compiles
+		{
+			get
+			{
+				return ItemGroups.SelectMany(group => group.GetChildren<Compile>());
+			}
+		}
+		/// <summary>Get all references of the project.</summary>
+		public IEnumerable<Reference> References
+		{
+			get
+			{
+				return ItemGroups.SelectMany(group => group.GetChildren<Reference>());
+			}
+		}
+		/// <summary>Get all project references of the project.</summary>
+		public IEnumerable<ProjectReference> ProjectReferences
+		{
+			get
+			{
+				return ItemGroups.SelectMany(group => group.GetChildren<ProjectReference>());
+			}
+		}
 
 		/// <summary>Loads a <see cref="Project"/> from a <see cref="string"/> containing XML.</summary>
 		public static Project Parse(string text)
