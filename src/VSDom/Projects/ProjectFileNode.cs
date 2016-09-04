@@ -233,6 +233,7 @@ namespace VSDom.Projects
 				case "Project": return new Project(element);
 				case "ProjectReference": return new ProjectReference(element);
 				case "Reference": return new Reference(element);
+				case "Service": return new Service(element);
 
 				case "PropertyGroup":
 					var first = element.Parent != null && element.Parent.Element(element.Name) == element;

@@ -31,8 +31,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\Shared\VSDom.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
@@ -53,6 +51,7 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="MsBuildNamespaceResolverTest.cs" />
+    <Compile Include="Projects\ServiceTest.cs" />
     <Compile Include="Projects\FolderTest.cs" />
     <Compile Include="Projects\ImportTest.cs" />
     <Compile Include="Projects\ProjectFileNodeCollectionTest.cs" />
@@ -75,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectFiles\SimpleProject.xml" />
+    <EmbeddedResource Include="ProjectFiles\SimpleSolution.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectFiles.resx">
@@ -90,19 +90,5 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ProjectFiles\SimpleSolution.txt" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
