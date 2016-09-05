@@ -66,7 +66,7 @@ namespace VSDom.Solutions
 				{
 					var file = Path.Combine(Location.Directory.FullName, node.Path);
 					var project = Project.Load(file);
-					project.Add(project);
+					projects.Add(project);
 				}
 				return projects;
 			}
