@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System;
 using System.IO;
+using System.Linq;
+using System.Text;
+using VSDom.Projects;
 
 namespace VSDom.Solutions
 {
@@ -55,11 +55,20 @@ namespace VSDom.Solutions
 
 
 		/// <summary>The project it contains.</summary>
-		public IEnumerable<ProjectNode> Projects
+		public List<Project> Projects
 		{
 			get
 			{
-				return ProjectNodes.Where(node => node.NodeType == ProjectNode.ProjectType);
+				Guard.NotNull(Location, "Location");
+				var projects = new List<Project>();
+
+				foreach (var node in ProjectNodes.Where(n => n.Path.EndsWith("proj")))
+				{
+					var file = Path.Combine(Location.Directory.FullName, node.Path);
+					var project = Project.Load(file);
+					project.Add(project);
+				}
+				return projects;
 			}
 		}
 				

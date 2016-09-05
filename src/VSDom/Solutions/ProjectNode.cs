@@ -16,11 +16,14 @@ namespace VSDom.Solutions
 			@"""(?<path>.+)"", " +
 			@"""{(?<id>" + GuidPattern + @")}""", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-		/// <summary>A project node type {FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}.</summary>
-		public static readonly Guid ProjectType = Guid.Parse("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC");
+		/// <summary>A project node type for C#. {FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}.</summary>
+		public static readonly Guid CSharpProject = Guid.Parse("FAE04EC0-301F-11D3-BF4B-00C04F79EFBC");
 
-		/// <summary>A project node type {2150E333-8FDC-42A3-9474-1A3956D46DE8}.</summary>
-		public static readonly Guid FolderType = Guid.Parse("2150E333-8FDC-42A3-9474-1A3956D46DE8");
+		/// <summary>A project node type for VB.NET. {F184B08F-C81C-45F6-A57F-5ABD9991F28F}.</summary>
+		public static readonly Guid VisualBasicProject = Guid.Parse("F184B08F-C81C-45F6-A57F-5ABD9991F28F");
+
+		/// <summary>A project node folder. {2150E333-8FDC-42A3-9474-1A3956D46DE8}.</summary>
+		public static readonly Guid Folder = Guid.Parse("2150E333-8FDC-42A3-9474-1A3956D46DE8");
 
 		/// <summary>The type of project.</summary>
 		public Guid NodeType { get; set; }
