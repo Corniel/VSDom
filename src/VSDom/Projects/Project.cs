@@ -44,6 +44,9 @@ namespace VSDom.Projects
 			}
 		}
 
+		/// <summary>Gets a collection of <see cref="PropertyGroup"/>s.</summary>
+		public ProjectFileNodeCollection<PropertyGroup> PropertyGroups { get { return GetChildren<PropertyGroup>(); } }
+
 		/// <summary>Gets a collection of <see cref="ItemGroup"/>s.</summary>
 		public ProjectFileNodeCollection<ItemGroup> ItemGroups { get { return GetChildren<ItemGroup>(); } }
 
