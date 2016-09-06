@@ -55,13 +55,20 @@ namespace VSDom.Projects
 			get { return Get("TargetFrameworkVersion"); }
 			set { Set("TargetFrameworkVersion", value); }
 		}
-		
 
-		/// <summary>Gets and set if the the project is a coded UI test or not.</summary>
+
+		/// <summary>Gets and set if the project is a coded UI test or not.</summary>
 		public bool? IsCodedUITest
 		{
 			get { return GetBoolean("IsCodedUITest"); }
 			set { SetBoolean("IsCodedUITest", value); }
+		}
+
+		/// <summary>Gets and set if the project has NuGet packages to restore.</summary>
+		public bool? RestorePackages
+		{
+			get { return GetBoolean("RestorePackages"); }
+			set { SetBoolean("RestorePackages", value); }
 		}
 
 		/// <summary>Gets and set the type of the test project.</summary>
