@@ -223,6 +223,7 @@ namespace VSDom.Projects
 			switch (element.Name.LocalName)
 			{
 				case "BootstrapperPackage": return new BootstrapperPackage(element);
+				case "ProjectExtensions": return new ProjectExtensions(element);
 				case "Compile": return new Compile(element);
 				case "Content": return new Content(element);
 				case "EmbeddedResource": return new EmbeddedResource(element);

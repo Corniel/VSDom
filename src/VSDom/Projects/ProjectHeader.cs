@@ -69,7 +69,7 @@ namespace VSDom.Projects
 		public string IISExpressSSLPort
 		{
 			get { return Get("IISExpressSSLPort"); }
-			set { Set("UseIISExpress", value); }
+			set { Set("IISExpressSSLPort", value); }
 		}
 		
 		/// <summary>Gets and set the IISExpressSSLPort.</summary>

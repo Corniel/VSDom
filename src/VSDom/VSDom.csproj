@@ -62,6 +62,7 @@
     <Compile Include="Projects\Folder.cs" />
     <Compile Include="Projects\ItemGroup.cs" />
     <Compile Include="Projects\Project.cs" />
+    <Compile Include="Projects\ProjectExtensions.cs" />
     <Compile Include="Projects\ProjectFileNode.cs" />
     <Compile Include="Projects\Import.cs" />
     <Compile Include="Projects\ProjectFileNodeCollection.cs" />
