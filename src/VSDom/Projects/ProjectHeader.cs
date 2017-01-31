@@ -16,13 +16,13 @@ namespace VSDom.Projects
 		public ProjectHeader(XElement element) : base(element) { }
 
 		/// <summary>Gets the local name of the <see cref="ProjectHeader"/> (PropertyGroup).</summary>
-		public override string LocalName { get { return "PropertyGroup"; } }
+		public override string LocalName { get { return nameof(PropertyGroup); } }
 
 		/// <summary>Gets and set the name of the assembly.</summary>
 		public string AssemblyName
 		{
-			get { return Get("AssemblyName"); }
-			set { Set("AssemblyName", value); }
+			get { return Get(nameof(AssemblyName)); }
+			set { Set(nameof(AssemblyName), value); }
 		}
 
 		/// <summary>Gets and set the application designer folder.</summary>
@@ -31,29 +31,29 @@ namespace VSDom.Projects
 		/// </remarks>
 		public string AppDesignerFolder
 		{
-			get { return Get("AppDesignerFolder"); }
-			set { Set("AppDesignerFolder", value); }
+			get { return Get(nameof(AppDesignerFolder)); }
+			set { Set(nameof(AppDesignerFolder), value); }
 		}
 
 		/// <summary>Gets and set the ID of the project.</summary>
 		public Guid ProjectGuid
 		{
-			get { return GetGuid("ProjectGuid"); }
-			set { SetGuid("ProjectGuid", value); }
+			get { return GetGuid(nameof(ProjectGuid)); }
+			set { SetGuid(nameof(ProjectGuid), value); }
 		}
 
 		/// <summary>Gets and set the output type of the project.</summary>
 		public string OutputType
 		{
-			get { return Get("OutputType"); }
-			set { Set("OutputType", value); }
+			get { return Get(nameof(OutputType)); }
+			set { Set(nameof(OutputType), value); }
 		}
 
 		/// <summary>Gets and set the target framework (version).</summary>
 		public string TargetFrameworkVersion
 		{
-			get { return Get("TargetFrameworkVersion"); }
-			set { Set("TargetFrameworkVersion", value); }
+			get { return Get(nameof(TargetFrameworkVersion)); }
+			set { Set(nameof(TargetFrameworkVersion), value); }
 		}
 
 		#region IIS related settings
@@ -61,43 +61,43 @@ namespace VSDom.Projects
 		/// <summary>Gets and set if IIS Express should be used or not.</summary>
 		public bool? UseIISExpress
 		{
-			get { return GetBoolean("UseIISExpress"); }
-			set { SetBoolean("UseIISExpress", value); }
+			get { return GetBoolean(nameof(UseIISExpress)); }
+			set { SetBoolean(nameof(UseIISExpress), value); }
 		}
 
 		/// <summary>Gets and set the IISExpressSSLPort.</summary>
 		public string IISExpressSSLPort
 		{
-			get { return Get("IISExpressSSLPort"); }
-			set { Set("IISExpressSSLPort", value); }
+			get { return Get(nameof(IISExpressSSLPort)); }
+			set { Set(nameof(IISExpressSSLPort), value); }
 		}
-		
+
 		/// <summary>Gets and set the IISExpressSSLPort.</summary>
 		public string IISExpressAnonymousAuthentication
 		{
-			get { return Get("IISExpressAnonymousAuthentication"); }
-			set { Set("IISExpressAnonymousAuthentication", value); }
+			get { return Get(nameof(IISExpressAnonymousAuthentication)); }
+			set { Set(nameof(IISExpressAnonymousAuthentication), value); }
 		}
-		
+
 		/// <summary>Gets and set the IISExpressWindowsAuthentication.</summary>
 		public string IISExpressWindowsAuthentication
 		{
-			get { return Get("IISExpressWindowsAuthentication"); }
-			set { Set("IISExpressWindowsAuthentication", value); }
+			get { return Get(nameof(IISExpressWindowsAuthentication)); }
+			set { Set(nameof(IISExpressWindowsAuthentication), value); }
 		}
-		
+
 		/// <summary>Gets and set the IISExpressUseClassicPipelineMode.</summary>
 		public string IISExpressUseClassicPipelineMode
 		{
-			get { return Get("IISExpressUseClassicPipelineMode"); }
-			set { Set("IISExpressUseClassicPipelineMode", value); }
+			get { return Get(nameof(IISExpressUseClassicPipelineMode)); }
+			set { Set(nameof(IISExpressUseClassicPipelineMode), value); }
 		}
 		#endregion
 
 		/// <summary>Gets and set if the project is a coded UI test or not.</summary>
 
 		/// <summary>Gets and set the if the assembly should be signed.</summary>
-		public bool? SignAssembly 
+		public bool? SignAssembly
 		{
 			get { return GetBoolean(nameof(SignAssembly)); }
 			set { SetBoolean(nameof(SignAssembly), value); }
@@ -127,29 +127,29 @@ namespace VSDom.Projects
 		/// <summary>Gets and set if the project is a coded UI test or not.</summary>
 		public bool? IsCodedUITest
 		{
-			get { return GetBoolean("IsCodedUITest"); }
-			set { SetBoolean("IsCodedUITest", value); }
+			get { return GetBoolean(nameof(IsCodedUITest)); }
+			set { SetBoolean(nameof(IsCodedUITest), value); }
 		}
 
 		/// <summary>Gets and set if the project has NuGet packages to restore.</summary>
 		public bool? RestorePackages
 		{
-			get { return GetBoolean("RestorePackages"); }
-			set { SetBoolean("RestorePackages", value); }
+			get { return GetBoolean(nameof(RestorePackages)); }
+			set { SetBoolean(nameof(RestorePackages), value); }
 		}
 
 		/// <summary>Gets and set the type of the test project.</summary>
 		public string TestProjectType
 		{
-			get { return Get("TestProjectType"); }
-			set { Set("TestProjectType", value); }
+			get { return Get(nameof(TestProjectType)); }
+			set { Set(nameof(TestProjectType), value); }
 		}
 
 		/// <summary>Gets and set the file alignment.</summary>
 		public string FileAlignment
 		{
-			get { return Get("FileAlignment"); }
-			set { Set("FileAlignment", value); }
+			get { return Get(nameof(FileAlignment)); }
+			set { Set(nameof(FileAlignment), value); }
 		}
 	}
 }
