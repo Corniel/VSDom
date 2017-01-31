@@ -69,6 +69,35 @@ Parameter name: element", act.Message);
 		}
 
 		[Test]
+		public void SignAssembly_SimpleProject_IsTrue()
+		{
+			var act = TestData.GetSimpleProject().Header.SignAssembly;
+			Assert.IsTrue(act);
+		}
+		[Test]
+		public void AssemblyOriginatorKeyFile_SimpleProject_VSDomSnk()
+		{
+			var act = TestData.GetSimpleProject().Header.AssemblyOriginatorKeyFile;
+			var exp = "VSDom.snk";
+			Assert.AreEqual(exp, act);
+		}
+
+		[Test]
+		public void RunCodeAnalysis_SimpleProject_IsTrue()
+		{
+			var act = TestData.GetSimpleProject().Header.RunCodeAnalysis;
+			Assert.IsTrue(act);
+		}
+		[Test]
+		public void CodeAnalysisRuleSet_SimpleProject_VSDomRuleset()
+		{
+			var act = TestData.GetSimpleProject().Header.CodeAnalysisRuleSet;
+			var exp = "VSDom.ruleset";
+			Assert.AreEqual(exp, act);
+		}
+
+
+		[Test]
 		public void ItemGroups_SimpleProject_2ItemGroups()
 		{
 			var act = TestData.GetSimpleProject().ItemGroups;

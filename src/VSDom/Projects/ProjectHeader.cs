@@ -55,9 +55,36 @@ namespace VSDom.Projects
 			get { return Get("TargetFrameworkVersion"); }
 			set { Set("TargetFrameworkVersion", value); }
 		}
-		
 
-		/// <summary>Gets and set if the the project is a coded UI test or not.</summary>
+		/// <summary>Gets and set the if the assembly should be signed.</summary>
+		public bool? SignAssembly 
+		{
+			get { return GetBoolean(nameof(SignAssembly)); }
+			set { SetBoolean(nameof(SignAssembly), value); }
+		}
+
+		/// <summary>Gets and set the originator of the key file.</summary>
+		public string AssemblyOriginatorKeyFile
+		{
+			get { return Get(nameof(AssemblyOriginatorKeyFile)); }
+			set { Set(nameof(AssemblyOriginatorKeyFile), value); }
+		}
+
+		/// <summary>Gets and set the if code analysis should be run at the build or not..</summary>
+		public bool? RunCodeAnalysis
+		{
+			get { return GetBoolean(nameof(RunCodeAnalysis)); }
+			set { SetBoolean(nameof(RunCodeAnalysis), value); }
+		}
+
+		/// <summary>Gets and set the location of the rule set.</summary>
+		public string CodeAnalysisRuleSet
+		{
+			get { return Get(nameof(CodeAnalysisRuleSet)); }
+			set { Set(nameof(CodeAnalysisRuleSet), value); }
+		}
+
+		/// <summary>Gets and set if the project is a coded UI test or not.</summary>
 		public bool? IsCodedUITest
 		{
 			get { return GetBoolean("IsCodedUITest"); }
