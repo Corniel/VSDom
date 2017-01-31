@@ -11,8 +11,8 @@ namespace VSDom.UnitTests.Solutions
 		public void Parse_SimpleSolution_Contains2Projects()
 		{
 			Solution solution = Solution.Parse(ProjectFiles.SimpleSolution);
-			var actual = solution.Projects.ToList();
-			Assert.AreEqual(2, actual.Count);
+			var actual = solution.ProjectNodes.ToList();
+			Assert.AreEqual(4, actual.Count);
 		}
 	}
 }

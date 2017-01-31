@@ -96,9 +96,9 @@ namespace VSDom.Projects
 		#region Get & Set accessors
 
 		/// <summary>Gets the <see cref="string"/> value of a child element.</summary>
-		protected string Get(string childName) { return Get(childName, false); }
+		public string Get(string childName) { return Get(childName, false); }
 		/// <summary>Gets the <see cref="string"/> value of a child element or attribute.</summary>
-		protected string Get(string childName, bool isAttr)
+		public string Get(string childName, bool isAttr)
 		{
 			string str = null;
 
@@ -116,9 +116,9 @@ namespace VSDom.Projects
 		}
 
 		/// <summary>Sets the <see cref="string"/> value of a child element.</summary>
-		protected void Set(string childName, string val) { Set(childName, val, false); }
+		public void Set(string childName, string val) { Set(childName, val, false); }
 		/// <summary>Sets the <see cref="string"/> value of a child element or attribute.</summary>
-		protected void Set(string childName, string val, bool isAttr)
+		public void Set(string childName, string val, bool isAttr)
 		{
 			if (isAttr)
 			{
@@ -131,9 +131,9 @@ namespace VSDom.Projects
 		}
 
 		/// <summary>Gets the <see cref="bool"/> value of a child element.</summary>
-		protected bool? GetBoolean(string childName) { return GetBoolean(childName, false); }
+		public bool? GetBoolean(string childName) { return GetBoolean(childName, false); }
 		/// <summary>Gets the <see cref="bool"/> value of a child element or attribute.</summary>
-		protected bool? GetBoolean(string childName, bool isAttr)
+		public bool? GetBoolean(string childName, bool isAttr)
 		{
 			bool val;
 			var str = Get(childName, isAttr);
@@ -142,9 +142,9 @@ namespace VSDom.Projects
 		}
 
 		/// <summary>Sets the <see cref="bool"/> value of a child element.</summary>
-		protected void SetBoolean(string childName, bool? val) { SetBoolean(childName, val, false); }
+		public void SetBoolean(string childName, bool? val) { SetBoolean(childName, val, false); }
 		/// <summary>Sets the <see cref="bool"/> value of a child element or attribute.</summary>
-		protected void SetBoolean(string childName, bool? val, bool isAttr)
+		public void SetBoolean(string childName, bool? val, bool isAttr)
 		{
 			string str = null;
 			if (val.HasValue)
@@ -155,9 +155,9 @@ namespace VSDom.Projects
 		}
 
 		/// <summary>Gets the <see cref="Guid"/> value of a child element.</summary>
-		protected Guid GetGuid(string childName) { return GetGuid(childName, false); }
+		public Guid GetGuid(string childName) { return GetGuid(childName, false); }
 		/// <summary>Gets the <see cref="Guid"/> value of a child element or attribute.</summary>
-		protected Guid GetGuid(string childName, bool isAttr)
+		public Guid GetGuid(string childName, bool isAttr)
 		{
 			Guid val;
 			var str = Get(childName, isAttr);
@@ -169,9 +169,9 @@ namespace VSDom.Projects
 		}
 
 		/// <summary>Sets the <see cref="Guid"/> value of a child element.</summary>
-		protected void SetGuid(string childName, Guid val) { SetGuid(childName, val, false); }
+		public void SetGuid(string childName, Guid val) { SetGuid(childName, val, false); }
 		/// <summary>Sets the <see cref="Guid"/> value of a child element or attribute.</summary>
-		protected void SetGuid(string childName, Guid val, bool isAttr)
+		public void SetGuid(string childName, Guid val, bool isAttr)
 		{
 			string str = null;
 			if (val != Guid.Empty)
@@ -223,6 +223,7 @@ namespace VSDom.Projects
 			switch (element.Name.LocalName)
 			{
 				case "BootstrapperPackage": return new BootstrapperPackage(element);
+				case "ProjectExtensions": return new ProjectExtensions(element);
 				case "Compile": return new Compile(element);
 				case "Content": return new Content(element);
 				case "EmbeddedResource": return new EmbeddedResource(element);

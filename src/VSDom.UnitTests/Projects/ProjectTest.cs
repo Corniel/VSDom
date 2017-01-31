@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 using System;
 using System.IO;
 using System.Xml.Linq;
@@ -104,6 +105,15 @@ Parameter name: element", act.Message);
 			Assert.IsNotNull(act);
 			Assert.AreEqual(2, act.Count);
 		}
+
+		[Test]
+		public void PropertyGroups_FirstOrDefaultBasedOnProperty_LinkToSnkFile()
+		{
+			var act = TestData.GetSimpleProject().PropertyGroups.FirstOrDefault(group => group.Get("AssemblyOriginatorKeyFile") != null);
+			Assert.IsNotNull(act);
+			Assert.AreEqual(@"..\Shared\VSDom.snk", act.Get("AssemblyOriginatorKeyFile"));
+		}
+
 
 		[Test]
 		public void ToString_NewProject_SomeXmlString()

@@ -56,6 +56,46 @@ namespace VSDom.Projects
 			set { Set("TargetFrameworkVersion", value); }
 		}
 
+		#region IIS related settings
+
+		/// <summary>Gets and set if IIS Express should be used or not.</summary>
+		public bool? UseIISExpress
+		{
+			get { return GetBoolean("UseIISExpress"); }
+			set { SetBoolean("UseIISExpress", value); }
+		}
+
+		/// <summary>Gets and set the IISExpressSSLPort.</summary>
+		public string IISExpressSSLPort
+		{
+			get { return Get("IISExpressSSLPort"); }
+			set { Set("IISExpressSSLPort", value); }
+		}
+		
+		/// <summary>Gets and set the IISExpressSSLPort.</summary>
+		public string IISExpressAnonymousAuthentication
+		{
+			get { return Get("IISExpressAnonymousAuthentication"); }
+			set { Set("IISExpressAnonymousAuthentication", value); }
+		}
+		
+		/// <summary>Gets and set the IISExpressWindowsAuthentication.</summary>
+		public string IISExpressWindowsAuthentication
+		{
+			get { return Get("IISExpressWindowsAuthentication"); }
+			set { Set("IISExpressWindowsAuthentication", value); }
+		}
+		
+		/// <summary>Gets and set the IISExpressUseClassicPipelineMode.</summary>
+		public string IISExpressUseClassicPipelineMode
+		{
+			get { return Get("IISExpressUseClassicPipelineMode"); }
+			set { Set("IISExpressUseClassicPipelineMode", value); }
+		}
+		#endregion
+
+		/// <summary>Gets and set if the project is a coded UI test or not.</summary>
+
 		/// <summary>Gets and set the if the assembly should be signed.</summary>
 		public bool? SignAssembly 
 		{
@@ -89,6 +129,13 @@ namespace VSDom.Projects
 		{
 			get { return GetBoolean("IsCodedUITest"); }
 			set { SetBoolean("IsCodedUITest", value); }
+		}
+
+		/// <summary>Gets and set if the project has NuGet packages to restore.</summary>
+		public bool? RestorePackages
+		{
+			get { return GetBoolean("RestorePackages"); }
+			set { SetBoolean("RestorePackages", value); }
 		}
 
 		/// <summary>Gets and set the type of the test project.</summary>

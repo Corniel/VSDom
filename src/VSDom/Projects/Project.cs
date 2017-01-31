@@ -44,6 +44,9 @@ namespace VSDom.Projects
 			}
 		}
 
+		/// <summary>Gets a collection of <see cref="PropertyGroup"/>s.</summary>
+		public ProjectFileNodeCollection<PropertyGroup> PropertyGroups { get { return GetChildren<PropertyGroup>(); } }
+
 		/// <summary>Gets a collection of <see cref="ItemGroup"/>s.</summary>
 		public ProjectFileNodeCollection<ItemGroup> ItemGroups { get { return GetChildren<ItemGroup>(); } }
 
@@ -71,6 +74,26 @@ namespace VSDom.Projects
 				return ItemGroups.SelectMany(group => group.GetChildren<ProjectReference>());
 			}
 		}
+
+
+		/// <summary>Get all project content items of the project.</summary>
+		public IEnumerable<Content> Contents
+		{
+			get
+			{
+				return ItemGroups.SelectMany(group => group.GetChildren<Content>());
+			}
+		}
+
+		/// <summary>Get all project none (content) items of the project.</summary>
+		public IEnumerable<None> Nones
+		{
+			get
+			{
+				return ItemGroups.SelectMany(group => group.GetChildren<None>());
+			}
+		}
+
 
 		/// <summary>Loads a <see cref="Project"/> from a <see cref="string"/> containing XML.</summary>
 		public static Project Parse(string text)
