@@ -222,21 +222,22 @@ namespace VSDom.Projects
 
 			switch (element.Name.LocalName)
 			{
-				case "BootstrapperPackage": return new BootstrapperPackage(element);
-				case "ProjectExtensions": return new ProjectExtensions(element);
-				case "Compile": return new Compile(element);
-				case "Content": return new Content(element);
-				case "EmbeddedResource": return new EmbeddedResource(element);
-				case "Folder": return new Folder(element);
-				case "Import": return new Import(element);
-				case "ItemGroup": return new ItemGroup(element);
-				case "None": return new None(element);
-				case "Project": return new Project(element);
-				case "ProjectReference": return new ProjectReference(element);
-				case "Reference": return new Reference(element);
-				case "Service": return new Service(element);
+				case nameof(Analyzer): /*           */ return new Analyzer(element);
+				case nameof(BootstrapperPackage): /**/ return new BootstrapperPackage(element);
+				case nameof(ProjectExtensions): /*  */ return new ProjectExtensions(element);
+				case nameof(Compile): /*            */ return new Compile(element);
+				case nameof(Content): /*            */ return new Content(element);
+				case nameof(EmbeddedResource): /*   */ return new EmbeddedResource(element);
+				case nameof(Folder): /*             */ return new Folder(element);
+				case nameof(Import): /*             */ return new Import(element);
+				case nameof(ItemGroup): /*          */ return new ItemGroup(element);
+				case nameof(None): /*               */ return new None(element);
+				case nameof(Project): /*            */ return new Project(element);
+				case nameof(ProjectReference): /*   */ return new ProjectReference(element);
+				case nameof(Reference): /*          */ return new Reference(element);
+				case nameof(Service): /*            */ return new Service(element);
 
-				case "PropertyGroup":
+				case nameof(PropertyGroup):
 					var first = element.Parent != null && element.Parent.Element(element.Name) == element;
 					if (first) { return new ProjectHeader(element); }
 					return new PropertyGroup(element);
