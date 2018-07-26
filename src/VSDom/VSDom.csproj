@@ -1,5 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Corniel Nobel</Authors>
+    <Copyright>Copyright © VSDom community 2016-2018</Copyright>
+    <PackageLicenseUrl>https://github.com/Corniel/VSDom/blob/master/license.txt</PackageLicenseUrl>
+    <Description>DOM for manipulation Visual Studio files.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>

@@ -7,8 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 		..\ReleaseNotes.md = ..\ReleaseNotes.md
-		..\VSDom.license.txt = ..\VSDom.license.txt
-		VSDom.ruleset = VSDom.ruleset
+		..\license.txt = ..\license.txt
+		..\VSDom.ruleset = ..\VSDom.ruleset
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EE041812-C0E4-4360-8875-DA083D72E8E8}"

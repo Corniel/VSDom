@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net462</TargetFrameworks>
+		<Authors>Corniel Nobel</Authors>
+		<Copyright>Copyright © VSDom community 2016-2018</Copyright>
+		<Description>Test for VSDom</Description>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="ProjectFiles\SimpleProject.xml" />
