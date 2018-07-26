@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSDom", "VSDom\VSDom.csproj", "{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSDom.UnitTests", "VSDom.UnitTests\VSDom.UnitTests.csproj", "{E564BD1C-FB02-49BC-B149-E6AE131384A7}"
-EndProject
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 15.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CDDA6EF-0839-4C2F-AB8D-07DA42C205D1}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
@@ -21,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EE0418
 		Shared\VersionInfo.cs = Shared\VersionInfo.cs
 		Shared\VSDom.snk = Shared\VSDom.snk
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSDom", "src\VSDom\VSDom.csproj", "{9FBF1F4B-0B3E-4F07-921A-5F97AB3ADBBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSDom.UnitTests", "test\VSDom.UnitTests\VSDom.UnitTests.csproj", "{E564BD1C-FB02-49BC-B149-E6AE131384A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,5 +42,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EE041812-C0E4-4360-8875-DA083D72E8E8} = {9CDDA6EF-0839-4C2F-AB8D-07DA42C205D1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D9BE139-389C-47A4-BFE4-E7BA98E7734A}
 	EndGlobalSection
 EndGlobal

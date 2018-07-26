@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace VSDom.Projects
 {
@@ -101,6 +102,34 @@ namespace VSDom.Projects
 		{
 			get => Get(nameof(WarningLevel));
 			set => Set(nameof(WarningLevel), value);
+		}
+
+		/// <summary>Gets and set the warnings that should be handled as Errors.</summary>
+		public HashSet<int> WarningsAsErrors
+		{
+			get => new HashSet<int>(ParseHashSet(Get(nameof(WarningsAsErrors))));
+			set => Set(nameof(WarningsAsErrors), ToXElementValue(value));
+		}
+		private static string ToXElementValue(HashSet<int> set)
+		{
+			if (set == null || set.Count == 0)
+			{
+				return null;
+			}
+			return string.Join(",", set);
+		}
+		private static IEnumerable<int> ParseHashSet(string str)
+		{
+			if(!string.IsNullOrEmpty(str))
+			{
+				foreach(var split in str.Split(','))
+				{
+					if(int.TryParse(split, out int number))
+					{
+						yield return number;
+					}
+				}
+			}
 		}
 	}
 }
