@@ -20,6 +20,7 @@ namespace VSDom.Projects
         /// The corresponding <see cref="XElement"/>.
         /// </param>
         public ItemGroup(XElement element) : base(element) { }
+        public ItemGroup() : base(nameof(ItemGroup)) { }
 
         /// <summary>Gets the <see cref="Compile"/> children.</summary>
         public ProjectFileNodeCollection<Compile> Compiled => GetChildren<Compile>();

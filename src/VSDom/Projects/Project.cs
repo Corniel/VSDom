@@ -58,20 +58,20 @@ namespace VSDom.Projects
         /// <summary>Get all references of the project.</summary>
         public IEnumerable<Reference> References
         {
-            get
-            {
-                return ItemGroups.SelectMany(group => group.GetChildren<Reference>());
-            }
+            get => ItemGroups.SelectMany(group => group.GetChildren<Reference>());
         }
+
         /// <summary>Get all project references of the project.</summary>
         public IEnumerable<ProjectReference> ProjectReferences
         {
-            get
-            {
-                return ItemGroups.SelectMany(group => group.GetChildren<ProjectReference>());
-            }
+            get => ItemGroups.SelectMany(group => group.GetChildren<ProjectReference>());
         }
 
+        /// <summary>Get all project references of the project.</summary>
+        public IEnumerable<PackageReference> PackageReferences
+        {
+            get => ItemGroups.SelectMany(group => group.GetChildren<PackageReference>());
+        }
 
         /// <summary>Get all project content items of the project.</summary>
         public IEnumerable<Content> Contents
