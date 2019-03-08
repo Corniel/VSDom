@@ -23,10 +23,7 @@ namespace VSDom.Projects
 		/// </remarks>
 		public FileInfo Location { get; set; }
 
-		/// <summary>Gets the local name of the <see cref="Project"/>.</summary>
-		public override string LocalName { get { return "Project"; } }
-
-		/// <summary>Gets and se the Tools version of the project.</summary>
+		/// <summary>Gets and set the Tools version of the project.</summary>
 		public string ToolsVersion
 		{
 			get { return Get("ToolsVersion", true); }
