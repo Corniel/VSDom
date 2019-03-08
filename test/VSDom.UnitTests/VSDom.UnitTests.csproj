@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net462</TargetFrameworks>
-		<Authors>Corniel Nobel</Authors>
-		<Copyright>Copyright © VSDom community 2016-2018</Copyright>
-		<Description>Test for VSDom</Description>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Corniel Nobel</Authors>
+    <Copyright>Copyright © VSDom community 2016-2018</Copyright>
+    <Description>Test for VSDom</Description>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="ProjectFiles\SimpleProject.xml" />
@@ -14,8 +14,9 @@
     <EmbeddedResource Include="ProjectFiles\SimpleSolution.txt" />
   </ItemGroup>
   <ItemGroup>
-		<PackageReference Include="NUnit" Version="3.10.1" />
-		<PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.0" />
+    <PackageReference Include="NUnit" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\VSDom\VSDom.csproj" />
