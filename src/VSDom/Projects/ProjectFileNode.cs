@@ -94,7 +94,7 @@ namespace VSDom.Projects
         public override string ToString() { return Element.ToString(); }
 
         /// <summary>Casts a <see cref="ProjectFileNode"/> to an <see cref="XElement"/>.</summary>
-        public static explicit operator XElement(ProjectFileNode node) { return node == null ? null : node.Element; }
+        public static explicit operator XElement(ProjectFileNode node) => node?.Element;
 
         #region Get & Set accessors
 
@@ -134,7 +134,7 @@ namespace VSDom.Projects
         /// <summary>Sets the value of the child node.</summary>
         protected void SetNode<T>(T value, [CallerMemberName] string propertyName = null)
         {
-            Set(propertyName, value == null ? null : value.ToString(), false);
+            Set(propertyName, value?.ToString(), false);
         }
 
         /// <summary>Sets the <see cref="string"/> value of a child element.</summary>
@@ -157,9 +157,8 @@ namespace VSDom.Projects
         /// <summary>Gets the <see cref="bool"/> value of a child element or attribute.</summary>
         public bool? GetBoolean(string childName, bool isAttr)
         {
-            bool val;
             var str = Get(childName, isAttr);
-            if (string.IsNullOrEmpty(str) || !bool.TryParse(str, out val)) { return null; }
+            if (string.IsNullOrEmpty(str) || !bool.TryParse(str, out bool val)) { return null; }
             return val;
         }
 
@@ -181,9 +180,8 @@ namespace VSDom.Projects
         /// <summary>Gets the <see cref="Guid"/> value of a child element or attribute.</summary>
         public Guid GetGuid(string childName, bool isAttr)
         {
-            Guid val;
             var str = Get(childName, isAttr);
-            if (Guid.TryParse(str, out val))
+            if (Guid.TryParse(str, out Guid val))
             {
                 return val;
             }

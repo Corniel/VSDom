@@ -20,6 +20,8 @@ namespace VSDom.Projects
         /// The corresponding <see cref="XElement"/>.
         /// </param>
         public ItemGroup(XElement element) : base(element) { }
+
+        /// <summary>Initializes a new instance of a <see cref="ItemGroup"/> node.</summary>
         public ItemGroup() : base(nameof(ItemGroup)) { }
 
         /// <summary>Gets the <see cref="Compile"/> children.</summary>

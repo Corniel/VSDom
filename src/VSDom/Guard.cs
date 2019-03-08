@@ -42,7 +42,10 @@ namespace VSDom
         public static string NotNullOrEmpty([ValidatedNotNull]string param, string paramName)
         {
             NotNull(param, paramName);
+#pragma warning disable S3256 // "string.IsNullOrEmpty" should be used
+            // in this case, not null was already checked.
             if (string.Empty.Equals(param))
+#pragma warning restore S3256 // "string.IsNullOrEmpty" should be used
             {
                 throw new ArgumentException("Value cannot be an empty string.", paramName);
             }

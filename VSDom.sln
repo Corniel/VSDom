@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 15.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CDDA6EF-0839-4C2F-AB8D-07DA42C205D1}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		..\license.txt = ..\license.txt
+		LICENSE.md = LICENSE.md
 		..\README.md = ..\README.md
 		..\ReleaseNotes.md = ..\ReleaseNotes.md
 	EndProjectSection
