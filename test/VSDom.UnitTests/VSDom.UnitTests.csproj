@@ -5,6 +5,12 @@
     <Copyright>Copyright © VSDom community 2016-2018</Copyright>
     <Description>Test for VSDom</Description>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
   <ItemGroup>
     <None Remove="ProjectFiles\SimpleProject.xml" />
     <None Remove="ProjectFiles\SimpleSolution.txt" />
