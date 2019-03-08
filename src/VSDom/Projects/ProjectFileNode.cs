@@ -22,6 +22,7 @@ namespace VSDom.Projects
         protected ProjectFileNode(XElement element)
         {
             Element = Guard.NotNull(element, "element");
+
             if (Element.Name != MsBuild.NS + LocalName && Element.Name != LocalName)
             {
                 throw new ArgumentException(string.Format(

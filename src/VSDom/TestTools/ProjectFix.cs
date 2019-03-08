@@ -58,6 +58,34 @@ namespace VSDom.TestTools
             }
         }
 
+        /// <summary>The Source Code Control properties (ProjectName, LocalPath, AuxPath, Provider) should have the value SAK.</summary>
+        /// <remarks>
+        /// see: https://stackoverflow.com/questions/18467994/why-missing-sccprojectname-in-project-file-cause-the-project-file-is-not-boun
+        /// </remarks>
+        public static bool SourceCodeControlPropertiesShouldBeSet(Project project, ILogger logger)
+        {
+            Guard.NotNull(project, nameof(project));
+
+            const string SAK = nameof(SAK);
+            
+            var header = project.Header;
+
+            if (header.SccProjectName != SAK ||
+                header.SccLocalPath != SAK ||
+                header.SccAuxPath != SAK || 
+                header.SccProvider != SAK)
+            {
+                header.SccProjectName = SAK;
+                header.SccLocalPath = SAK;
+                header.SccAuxPath = SAK;
+                header.SccProvider = SAK;
+
+                return true;
+            }
+
+            return false;
+        }
+
         /// <summary>Projects should (under normal circumstances) not need to set
         /// the file alignment but leave it common language runtime.
         /// </summary>

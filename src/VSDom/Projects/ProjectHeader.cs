@@ -177,5 +177,33 @@ namespace VSDom.Projects
             get => GetNode<string>();
             set => SetNode(value);
         }
+        
+        /// <summary>Gets and set the Source Code Control (SCC) project name.</summary>
+        public string SccProjectName
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+        
+        /// <summary>Gets and set the Source Code Control (SCC) local path.</summary>
+        public string SccLocalPath
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+
+        /// <summary>Gets and set the Source Code Control (SCC) aux path.</summary>
+        public string SccAuxPath
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+
+        /// <summary>Gets and set the Source Code Control (SCC) provider.</summary>
+        public string SccProvider
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
     }
 }
