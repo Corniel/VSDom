@@ -34,8 +34,8 @@ namespace VSDom.Projects
         /// <summary>Gets and set the location of the rule set.</summary>
         public string CodeAnalysisRuleSet
         {
-            get => Get(nameof(CodeAnalysisRuleSet));
-            set => Set(nameof(CodeAnalysisRuleSet), value);
+            get => GetNode<string>();
+            set => SetNode(value);
         }
 
         /// <summary>Gets and set the debug symbols value.</summary>

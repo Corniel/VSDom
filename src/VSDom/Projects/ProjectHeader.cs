@@ -137,6 +137,26 @@ namespace VSDom.Projects
             set { SetBoolean(nameof(RestorePackages), value); }
         }
 
+        /// <summary>Gets and set the NuGet's package import (time)stamp.</summary>
+        public string NuGetPackageImportStamp
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+
+        /// <summary>Gets and set the product version.</summary>
+        public string ProductVersion
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+        /// <summary>Gets and set the target framework profile.</summary>
+        public string TargetFrameworkProfile
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+
         /// <summary>Gets and set the type of the test project.</summary>
         public string TestProjectType
         {
@@ -157,6 +177,5 @@ namespace VSDom.Projects
             get => GetNode<string>();
             set => SetNode(value);
         }
-
     }
 }
