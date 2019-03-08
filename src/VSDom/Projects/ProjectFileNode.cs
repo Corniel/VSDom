@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using VSDom.Conversion;
 
 namespace VSDom.Projects
 {
@@ -113,6 +115,25 @@ namespace VSDom.Projects
                 if (child != null) { str = child.Value; }
             }
             return str;
+        }
+
+        /// <summary>Gets a typed value form the child node.</summary>
+        protected T GetNode<T>([CallerMemberName] string propertyName = null)
+        {
+            var str = Get(propertyName, false);
+
+            if (typeof(T) != typeof(string))
+            {
+                var converter = TypeConverters.Get(GetType(), propertyName);
+                return (T)converter.ConvertFromString(str);
+            }
+            return (T)(object)str;
+        }
+
+        /// <summary>Sets the value of the child node.</summary>
+        protected void SetNode<T>(T value, [CallerMemberName] string propertyName = null)
+        {
+            Set(propertyName, value == null ? null : value.ToString(), false);
         }
 
         /// <summary>Sets the <see cref="string"/> value of a child element.</summary>
@@ -232,6 +253,7 @@ namespace VSDom.Projects
                 case nameof(Import): /*             */ return new Import(element);
                 case nameof(ItemGroup): /*          */ return new ItemGroup(element);
                 case nameof(None): /*               */ return new None(element);
+                case nameof(PackageReference): /*   */ return new PackageReference(element);
                 case nameof(Project): /*            */ return new Project(element);
                 case nameof(ProjectReference): /*   */ return new ProjectReference(element);
                 case nameof(Reference): /*          */ return new Reference(element);
