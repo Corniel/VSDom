@@ -150,5 +150,13 @@ namespace VSDom.Projects
             get { return Get(nameof(FileAlignment)); }
             set { Set(nameof(FileAlignment), value); }
         }
+
+        /// <summary>Gets and set the restore project style.</summary>
+        public string RestoreProjectStyle
+        {
+            get => GetNode<string>();
+            set => SetNode(value);
+        }
+
     }
 }
